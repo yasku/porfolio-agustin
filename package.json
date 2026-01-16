@@ -1,0 +1,26 @@
+{
+  "name": "900de2b6-af28-4443-94e6-71ce710837a4",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node scripts/run-dev.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/react": "^19.0.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.1.0",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20"
+  }
+}
