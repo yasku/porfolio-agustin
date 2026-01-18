@@ -20,11 +20,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `__tests__/test-utils.tsx` - Custom render function and test helpers
   - New npm scripts: `test`, `test:run`, `test:ui`, `test:coverage`, `test:e2e`, `test:e2e:ui`, `test:e2e:install`
 
-- **Utility Functions**
+- **Utility Functions (Phase 2 Complete)**
   - `utils/formatUptime.ts` - Extracted from SystemStats for better testability
+  - `utils/parseCommand.ts` - Command parser utility extracted from Terminal component
+    - Handles edge cases: empty strings, whitespace, tabs
+    - Case-insensitive command parsing
+    - Preserves argument case
 
 - **Test Files**
   - `__tests__/utils/formatUptime.test.ts` - 8 tests for formatUptime utility
+  - `__tests__/utils/parseCommand.test.ts` - 20 tests for parseCommand utility
   - `__tests__/components/TerminalPrompt.test.tsx` - 3 tests for TerminalPrompt component
   - `__tests__/e2e/navigation.spec.ts` - E2E navigation tests (scaffolded)
 
@@ -34,23 +39,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - `package.json` - Added testing dependencies and scripts
+- `components/Terminal.tsx` - Refactored to use `parseCommand` utility for better testability and maintainability
+- `TODO.md` - Updated to reflect Phase 2 completion (19% overall progress)
 
 ### Test Results
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
+✓ __tests__/utils/parseCommand.test.ts (20 tests)
 ✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
 
-Test Files  2 passed (2)
-Tests       11 passed (11)
+Test Files  3 passed (3)
+Tests       31 passed (31)
 ```
 
 ### Planned (Next Phases)
-- Phase 2: Complete unit tests for utility functions
-- Phase 3: Terminal and SystemStats component tests
-- Phase 4: Header and QuickLinks component tests
-- Phase 5: MacTerminal, ASCIIBanner, HeroSection tests
-- Phase 6: E2E tests with Playwright
-- Phase 7: CI/CD integration with GitHub Actions
+- Phase 3: Terminal and SystemStats component tests (26 tasks)
+- Phase 4: Header and QuickLinks component tests (11 tasks)
+- Phase 5: MacTerminal, ASCIIBanner, HeroSection tests (6 remaining tasks)
+- Phase 6: E2E tests with Playwright (14 tasks)
+- Phase 7: CI/CD integration with GitHub Actions (5 tasks)
 
 ---
 
@@ -111,6 +118,7 @@ Tests       11 passed (11)
 |------|---------|-------|----------|-------|
 | 2026-01-18 | 0.1.0 | 0 | 0% | Initial state - no tests |
 | 2026-01-18 | 0.1.1 | 11 | ~5% | Phase 1 complete - testing infrastructure |
+| 2026-01-18 | 0.1.2 | 31 | ~8% | Phase 2 complete - utility functions tested |
 
 ---
 

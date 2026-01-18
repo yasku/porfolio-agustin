@@ -11,6 +11,8 @@
 
 This document tracks the implementation of comprehensive test coverage for the portfolio project. The plan is organized into phases, with tasks prioritized by impact and complexity.
 
+**IMPORTANT:** After completing each phase, update CHANGELOG.md with the changes made.
+
 ### Current Test Coverage: ~8% (31 tests passing)
 
 ### Target Test Coverage: 80%+
@@ -73,6 +75,7 @@ npm run test:e2e:install  # Install Playwright browsers
 ## Phase 3: Component Tests - High Priority
 
 > **Goal:** Test the most complex interactive components
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 3.1 Terminal Component Tests
 
@@ -115,6 +118,7 @@ npm run test:e2e:install  # Install Playwright browsers
 ## Phase 4: Component Tests - Medium Priority
 
 > **Goal:** Test interactive components with callbacks
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 4.1 Header Component Tests
 
@@ -143,6 +147,7 @@ npm run test:e2e:install  # Install Playwright browsers
 
 > **Goal:** Test simple presentational components
 > **Status:** 3/9 tasks completed
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 5.1 MacTerminal Component Tests
 
@@ -179,6 +184,7 @@ npm run test:e2e:install  # Install Playwright browsers
 
 > **Goal:** Test complete user workflows with Playwright
 > **Note:** Run `npm run test:e2e:install` to install browsers before running E2E tests
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 6.1 Terminal Workflow Tests
 
@@ -222,6 +228,7 @@ npm run test:e2e:install  # Install Playwright browsers
 ## Phase 7: CI/CD Integration
 
 > **Goal:** Automate test execution
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 | Status | Task | Description |
 |--------|------|-------------|
