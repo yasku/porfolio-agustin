@@ -3,7 +3,7 @@
 > **Project:** Agustin Yaskuloski Portfolio
 > **Created:** 2026-01-18
 > **Last Updated:** 2026-01-18
-> **Status:** In Progress
+> **Status:** In Progress - Phase 2 Complete
 
 ---
 
@@ -11,7 +11,7 @@
 
 This document tracks the implementation of comprehensive test coverage for the portfolio project. The plan is organized into phases, with tasks prioritized by impact and complexity.
 
-### Current Test Coverage: ~5% (11 tests passing)
+### Current Test Coverage: ~8% (31 tests passing)
 
 ### Target Test Coverage: 80%+
 
@@ -56,17 +56,17 @@ npm run test:e2e:install  # Install Playwright browsers
 
 ---
 
-## Phase 2: Unit Tests - Utility Functions
+## Phase 2: Unit Tests - Utility Functions ✅ COMPLETED
 
 > **Goal:** Test pure functions that can be extracted from components
-> **Status:** 2/4 tasks completed
+> **Status:** 4/4 tasks completed
 
 | Status | Task | Description |
 |--------|------|-------------|
 | [x] | 2.1 Extract formatUptime utility | Move formatUptime from SystemStats to utils/ |
 | [x] | 2.2 Test formatUptime | Test edge cases: 0s, 59s, 60s, 3600s, large values |
-| [ ] | 2.3 Extract command parser | Extract command parsing logic from Terminal |
-| [ ] | 2.4 Test command parser | Test command + args splitting, edge cases |
+| [x] | 2.3 Extract command parser | Extract command parsing logic from Terminal |
+| [x] | 2.4 Test command parser | Test command + args splitting, edge cases |
 
 ---
 
@@ -238,13 +238,13 @@ npm run test:e2e:install  # Install Playwright browsers
 | Phase | Total Tasks | Completed | Progress |
 |-------|-------------|-----------|----------|
 | Phase 1: Infrastructure | 8 | 8 | 100% ✅ |
-| Phase 2: Unit Tests | 4 | 2 | 50% |
+| Phase 2: Unit Tests | 4 | 4 | 100% ✅ |
 | Phase 3: High Priority | 26 | 0 | 0% |
 | Phase 4: Medium Priority | 11 | 0 | 0% |
 | Phase 5: Lower Priority | 9 | 3 | 33% |
 | Phase 6: E2E Tests | 14 | 0 | 0% (6 scaffolded) |
 | Phase 7: CI/CD | 5 | 0 | 0% |
-| **Total** | **77** | **13** | **17%** |
+| **Total** | **77** | **15** | **19%** |
 
 ---
 
@@ -252,10 +252,11 @@ npm run test:e2e:install  # Install Playwright browsers
 
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
+✓ __tests__/utils/parseCommand.test.ts (20 tests)
 ✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
 
-Test Files  2 passed (2)
-Tests       11 passed (11)
+Test Files  3 passed (3)
+Tests       31 passed (31)
 ```
 
 ---
@@ -268,13 +269,15 @@ Tests       11 passed (11)
 ├── vitest.setup.ts            # Test setup with RTL matchers
 ├── playwright.config.ts       # Playwright E2E configuration
 ├── utils/
-│   └── formatUptime.ts        # Extracted utility function
+│   ├── formatUptime.ts        # Extracted utility function
+│   └── parseCommand.ts        # Command parser utility function
 └── __tests__/
     ├── test-utils.tsx         # Custom render and helpers
     ├── components/
     │   └── TerminalPrompt.test.tsx
     ├── utils/
-    │   └── formatUptime.test.ts
+    │   ├── formatUptime.test.ts
+    │   └── parseCommand.test.ts
     └── e2e/
         └── navigation.spec.ts  # E2E navigation tests (scaffolded)
 ```
