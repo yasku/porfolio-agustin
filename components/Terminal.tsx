@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { parseCommand } from '@/utils/parseCommand';
 
 interface TerminalProps {
   onCommandEnter?: (command: string) => void;
@@ -181,7 +182,7 @@ export default function Terminal({ onCommandEnter }: TerminalProps) {
     setHistory((prev) => [...prev, { type: 'command', text: trimmedCmd }]);
     setCommandHistory((prev) => [...prev, trimmedCmd]);
 
-    const [command, ...args] = trimmedCmd.split(' ');
+    const { command, args } = parseCommand(trimmedCmd);
 
     if (command === 'cat' && args.length > 0) {
       if (args[0] === 'resume.txt') {

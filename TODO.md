@@ -3,7 +3,7 @@
 > **Project:** Agustin Yaskuloski Portfolio
 > **Created:** 2026-01-18
 > **Last Updated:** 2026-01-18
-> **Status:** In Progress
+> **Status:** In Progress - Phase 2 Complete
 
 ---
 
@@ -11,7 +11,9 @@
 
 This document tracks the implementation of comprehensive test coverage for the portfolio project. The plan is organized into phases, with tasks prioritized by impact and complexity.
 
-### Current Test Coverage: ~5% (11 tests passing)
+**IMPORTANT:** After completing each phase, update CHANGELOG.md with the changes made.
+
+### Current Test Coverage: ~8% (31 tests passing)
 
 ### Target Test Coverage: 80%+
 
@@ -56,23 +58,24 @@ npm run test:e2e:install  # Install Playwright browsers
 
 ---
 
-## Phase 2: Unit Tests - Utility Functions
+## Phase 2: Unit Tests - Utility Functions ✅ COMPLETED
 
 > **Goal:** Test pure functions that can be extracted from components
-> **Status:** 2/4 tasks completed
+> **Status:** 4/4 tasks completed
 
 | Status | Task | Description |
 |--------|------|-------------|
 | [x] | 2.1 Extract formatUptime utility | Move formatUptime from SystemStats to utils/ |
 | [x] | 2.2 Test formatUptime | Test edge cases: 0s, 59s, 60s, 3600s, large values |
-| [ ] | 2.3 Extract command parser | Extract command parsing logic from Terminal |
-| [ ] | 2.4 Test command parser | Test command + args splitting, edge cases |
+| [x] | 2.3 Extract command parser | Extract command parsing logic from Terminal |
+| [x] | 2.4 Test command parser | Test command + args splitting, edge cases |
 
 ---
 
 ## Phase 3: Component Tests - High Priority
 
 > **Goal:** Test the most complex interactive components
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 3.1 Terminal Component Tests
 
@@ -115,6 +118,7 @@ npm run test:e2e:install  # Install Playwright browsers
 ## Phase 4: Component Tests - Medium Priority
 
 > **Goal:** Test interactive components with callbacks
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 4.1 Header Component Tests
 
@@ -143,6 +147,7 @@ npm run test:e2e:install  # Install Playwright browsers
 
 > **Goal:** Test simple presentational components
 > **Status:** 3/9 tasks completed
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 5.1 MacTerminal Component Tests
 
@@ -179,6 +184,7 @@ npm run test:e2e:install  # Install Playwright browsers
 
 > **Goal:** Test complete user workflows with Playwright
 > **Note:** Run `npm run test:e2e:install` to install browsers before running E2E tests
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 ### 6.1 Terminal Workflow Tests
 
@@ -222,6 +228,7 @@ npm run test:e2e:install  # Install Playwright browsers
 ## Phase 7: CI/CD Integration
 
 > **Goal:** Automate test execution
+> **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
 | Status | Task | Description |
 |--------|------|-------------|
@@ -238,13 +245,13 @@ npm run test:e2e:install  # Install Playwright browsers
 | Phase | Total Tasks | Completed | Progress |
 |-------|-------------|-----------|----------|
 | Phase 1: Infrastructure | 8 | 8 | 100% ✅ |
-| Phase 2: Unit Tests | 4 | 2 | 50% |
+| Phase 2: Unit Tests | 4 | 4 | 100% ✅ |
 | Phase 3: High Priority | 26 | 0 | 0% |
 | Phase 4: Medium Priority | 11 | 0 | 0% |
 | Phase 5: Lower Priority | 9 | 3 | 33% |
 | Phase 6: E2E Tests | 14 | 0 | 0% (6 scaffolded) |
 | Phase 7: CI/CD | 5 | 0 | 0% |
-| **Total** | **77** | **13** | **17%** |
+| **Total** | **77** | **15** | **19%** |
 
 ---
 
@@ -252,10 +259,11 @@ npm run test:e2e:install  # Install Playwright browsers
 
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
+✓ __tests__/utils/parseCommand.test.ts (20 tests)
 ✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
 
-Test Files  2 passed (2)
-Tests       11 passed (11)
+Test Files  3 passed (3)
+Tests       31 passed (31)
 ```
 
 ---
@@ -268,13 +276,15 @@ Tests       11 passed (11)
 ├── vitest.setup.ts            # Test setup with RTL matchers
 ├── playwright.config.ts       # Playwright E2E configuration
 ├── utils/
-│   └── formatUptime.ts        # Extracted utility function
+│   ├── formatUptime.ts        # Extracted utility function
+│   └── parseCommand.ts        # Command parser utility function
 └── __tests__/
     ├── test-utils.tsx         # Custom render and helpers
     ├── components/
     │   └── TerminalPrompt.test.tsx
     ├── utils/
-    │   └── formatUptime.test.ts
+    │   ├── formatUptime.test.ts
+    │   └── parseCommand.test.ts
     └── e2e/
         └── navigation.spec.ts  # E2E navigation tests (scaffolded)
 ```
