@@ -10,15 +10,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- `TODO.md` - Comprehensive test coverage implementation plan with 77 tasks across 7 phases
-- `CHANGELOG.md` - Project changelog to track all changes
+- **Testing Infrastructure (Phase 1 Complete)**
+  - Vitest 4.0.17 as unit/component test runner
+  - React Testing Library 16.3.1 for component testing
+  - Playwright 1.57.0 for E2E testing
+  - `vitest.config.ts` - Vitest configuration with jsdom environment
+  - `vitest.setup.ts` - Test setup with RTL matchers and browser API mocks
+  - `playwright.config.ts` - Playwright E2E configuration
+  - `__tests__/test-utils.tsx` - Custom render function and test helpers
+  - New npm scripts: `test`, `test:run`, `test:ui`, `test:coverage`, `test:e2e`, `test:e2e:ui`, `test:e2e:install`
 
-### Planned
-- Testing infrastructure setup (Vitest, React Testing Library, Playwright)
-- Unit tests for utility functions
-- Component tests for all 8 components
-- E2E tests for user workflows
-- CI/CD integration with GitHub Actions
+- **Utility Functions**
+  - `utils/formatUptime.ts` - Extracted from SystemStats for better testability
+
+- **Test Files**
+  - `__tests__/utils/formatUptime.test.ts` - 8 tests for formatUptime utility
+  - `__tests__/components/TerminalPrompt.test.tsx` - 3 tests for TerminalPrompt component
+  - `__tests__/e2e/navigation.spec.ts` - E2E navigation tests (scaffolded)
+
+- **Documentation**
+  - `TODO.md` - Comprehensive test coverage implementation plan with 77 tasks
+  - `CHANGELOG.md` - Project changelog
+
+### Changed
+- `package.json` - Added testing dependencies and scripts
+
+### Test Results
+```
+✓ __tests__/utils/formatUptime.test.ts (8 tests)
+✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
+
+Test Files  2 passed (2)
+Tests       11 passed (11)
+```
+
+### Planned (Next Phases)
+- Phase 2: Complete unit tests for utility functions
+- Phase 3: Terminal and SystemStats component tests
+- Phase 4: Header and QuickLinks component tests
+- Phase 5: MacTerminal, ASCIIBanner, HeroSection tests
+- Phase 6: E2E tests with Playwright
+- Phase 7: CI/CD integration with GitHub Actions
 
 ---
 
@@ -75,21 +107,58 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Test Coverage Progress
 
-| Date | Version | Coverage | Notes |
-|------|---------|----------|-------|
-| 2026-01-18 | 0.1.0 | 0% | Initial state - no tests |
+| Date | Version | Tests | Coverage | Notes |
+|------|---------|-------|----------|-------|
+| 2026-01-18 | 0.1.0 | 0 | 0% | Initial state - no tests |
+| 2026-01-18 | 0.1.1 | 11 | ~5% | Phase 1 complete - testing infrastructure |
+
+---
+
+## Dependencies Added
+
+### devDependencies (Testing)
+```json
+{
+  "@playwright/test": "^1.57.0",
+  "@testing-library/jest-dom": "^6.9.1",
+  "@testing-library/react": "^16.3.1",
+  "@testing-library/user-event": "^14.6.1",
+  "@vitejs/plugin-react": "^5.1.2",
+  "jsdom": "^27.4.0",
+  "vitest": "^4.0.17"
+}
+```
 
 ---
 
 ## Migration Notes
 
-### From 0.1.0 to next version
-- No breaking changes expected
-- Testing infrastructure will be added as devDependencies
+### From 0.1.0 to 0.1.1
+- No breaking changes
+- Testing infrastructure added as devDependencies only
+- New `utils/` directory created
+- New `__tests__/` directory created
+
+### Running Tests
+```bash
+# Install dependencies
+npm install
+
+# Run unit/component tests
+npm test           # Watch mode
+npm run test:run   # Single run
+
+# Run with coverage
+npm run test:coverage
+
+# Run E2E tests (requires browser install first)
+npm run test:e2e:install  # Install browsers
+npm run test:e2e          # Run E2E tests
+```
 
 ---
 
 ## Contributors
 
 - Agustin Yaskuloski - Initial development
-- Claude (AI Assistant) - Test coverage analysis and planning
+- Claude (AI Assistant) - Test coverage analysis, infrastructure setup, and implementation

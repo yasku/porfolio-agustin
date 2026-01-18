@@ -11,39 +11,47 @@
 
 This document tracks the implementation of comprehensive test coverage for the portfolio project. The plan is organized into phases, with tasks prioritized by impact and complexity.
 
-### Current Test Coverage: 0%
+### Current Test Coverage: ~5% (11 tests passing)
 
 ### Target Test Coverage: 80%+
 
 ---
 
-## Phase 1: Testing Infrastructure Setup
+## Phase 1: Testing Infrastructure Setup ✅ COMPLETED
 
 > **Goal:** Set up testing frameworks and configuration files
+> **Status:** 8/8 tasks completed
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 1.1 Install Vitest | Add Vitest as the unit/component test runner |
-| [ ] | 1.2 Install React Testing Library | Add @testing-library/react and related packages |
-| [ ] | 1.3 Install Playwright | Add Playwright for E2E testing |
-| [ ] | 1.4 Create Vitest config | Configure vitest.config.ts for Next.js |
-| [ ] | 1.5 Create test setup file | Configure vitest.setup.ts with RTL matchers |
-| [ ] | 1.6 Create Playwright config | Configure playwright.config.ts |
-| [ ] | 1.7 Update package.json | Add test scripts (test, test:ui, test:e2e, test:coverage) |
-| [ ] | 1.8 Create test utilities | Add test helpers and mock utilities |
+| [x] | 1.1 Install Vitest | Add Vitest as the unit/component test runner |
+| [x] | 1.2 Install React Testing Library | Add @testing-library/react and related packages |
+| [x] | 1.3 Install Playwright | Add Playwright for E2E testing |
+| [x] | 1.4 Create Vitest config | Configure vitest.config.ts for Next.js |
+| [x] | 1.5 Create test setup file | Configure vitest.setup.ts with RTL matchers |
+| [x] | 1.6 Create Playwright config | Configure playwright.config.ts |
+| [x] | 1.7 Update package.json | Add test scripts (test, test:ui, test:e2e, test:coverage) |
+| [x] | 1.8 Create test utilities | Add test helpers and mock utilities |
 
-**Dependencies to install:**
+**Installed packages:**
 ```bash
 # Unit/Component Testing
-vitest
-@vitejs/plugin-react
-jsdom
-@testing-library/react
-@testing-library/jest-dom
-@testing-library/user-event
+vitest @vitejs/plugin-react jsdom
+@testing-library/react @testing-library/jest-dom @testing-library/user-event
 
 # E2E Testing
 @playwright/test
+```
+
+**Available test scripts:**
+```bash
+npm test           # Run Vitest in watch mode
+npm run test:run   # Run Vitest once
+npm run test:ui    # Run Vitest with UI
+npm run test:coverage  # Run with coverage report
+npm run test:e2e   # Run Playwright E2E tests
+npm run test:e2e:ui    # Run Playwright with UI
+npm run test:e2e:install  # Install Playwright browsers
 ```
 
 ---
@@ -51,11 +59,12 @@ jsdom
 ## Phase 2: Unit Tests - Utility Functions
 
 > **Goal:** Test pure functions that can be extracted from components
+> **Status:** 2/4 tasks completed
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 2.1 Extract formatUptime utility | Move formatUptime from SystemStats to utils/ |
-| [ ] | 2.2 Test formatUptime | Test edge cases: 0s, 59s, 60s, 3600s, large values |
+| [x] | 2.1 Extract formatUptime utility | Move formatUptime from SystemStats to utils/ |
+| [x] | 2.2 Test formatUptime | Test edge cases: 0s, 59s, 60s, 3600s, large values |
 | [ ] | 2.3 Extract command parser | Extract command parsing logic from Terminal |
 | [ ] | 2.4 Test command parser | Test command + args splitting, edge cases |
 
@@ -130,9 +139,10 @@ jsdom
 
 ---
 
-## Phase 5: Component Tests - Lower Priority
+## Phase 5: Component Tests - Lower Priority ✅ PARTIALLY COMPLETED
 
 > **Goal:** Test simple presentational components
+> **Status:** 3/9 tasks completed
 
 ### 5.1 MacTerminal Component Tests
 
@@ -143,13 +153,13 @@ jsdom
 | [ ] | 5.1.3 Test children render | Verify children displayed in container |
 | [ ] | 5.1.4 Test traffic light buttons | Verify aria-labels present |
 
-### 5.2 TerminalPrompt Component Tests
+### 5.2 TerminalPrompt Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.2.1 Test default path | Verify ~ renders when no path |
-| [ ] | 5.2.2 Test custom path | Verify custom path renders correctly |
-| [ ] | 5.2.3 Test prompt format | Verify "agustin@portfolio:path$" format |
+| [x] | 5.2.1 Test default path | Verify ~ renders when no path |
+| [x] | 5.2.2 Test custom path | Verify custom path renders correctly |
+| [x] | 5.2.3 Test prompt format | Verify "agustin@portfolio:path$" format |
 
 ### 5.3 ASCIIBanner Component Tests
 
@@ -168,6 +178,7 @@ jsdom
 ## Phase 6: E2E Tests
 
 > **Goal:** Test complete user workflows with Playwright
+> **Note:** Run `npm run test:e2e:install` to install browsers before running E2E tests
 
 ### 6.1 Terminal Workflow Tests
 
@@ -178,16 +189,18 @@ jsdom
 | [ ] | 6.1.3 Test command history | Type commands → ArrowUp recalls them |
 | [ ] | 6.1.4 Test all commands E2E | Execute each command, verify output |
 
-### 6.2 Navigation Tests
+### 6.2 Navigation Tests (Scaffolded)
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.2.1 Test /about page | Navigate and verify content loads |
-| [ ] | 6.2.2 Test /skills page | Navigate and verify content loads |
-| [ ] | 6.2.3 Test /projects page | Navigate and verify content loads |
-| [ ] | 6.2.4 Test /experience page | Navigate and verify content loads |
-| [ ] | 6.2.5 Test /contact page | Navigate and verify content loads |
-| [ ] | 6.2.6 Test 404 page | Navigate to invalid route, verify 404 |
+| [~] | 6.2.1 Test /about page | Navigate and verify content loads |
+| [~] | 6.2.2 Test /skills page | Navigate and verify content loads |
+| [~] | 6.2.3 Test /projects page | Navigate and verify content loads |
+| [~] | 6.2.4 Test /experience page | Navigate and verify content loads |
+| [~] | 6.2.5 Test /contact page | Navigate and verify content loads |
+| [~] | 6.2.6 Test 404 page | Navigate to invalid route, verify 404 |
+
+> [~] = Test scaffolded in `__tests__/e2e/navigation.spec.ts`, needs browser install to run
 
 ### 6.3 Responsive Tests
 
@@ -224,14 +237,47 @@ jsdom
 
 | Phase | Total Tasks | Completed | Progress |
 |-------|-------------|-----------|----------|
-| Phase 1: Infrastructure | 8 | 0 | 0% |
-| Phase 2: Unit Tests | 4 | 0 | 0% |
+| Phase 1: Infrastructure | 8 | 8 | 100% ✅ |
+| Phase 2: Unit Tests | 4 | 2 | 50% |
 | Phase 3: High Priority | 26 | 0 | 0% |
 | Phase 4: Medium Priority | 11 | 0 | 0% |
-| Phase 5: Lower Priority | 9 | 0 | 0% |
-| Phase 6: E2E Tests | 14 | 0 | 0% |
+| Phase 5: Lower Priority | 9 | 3 | 33% |
+| Phase 6: E2E Tests | 14 | 0 | 0% (6 scaffolded) |
 | Phase 7: CI/CD | 5 | 0 | 0% |
-| **Total** | **77** | **0** | **0%** |
+| **Total** | **77** | **13** | **17%** |
+
+---
+
+## Test Results
+
+```
+✓ __tests__/utils/formatUptime.test.ts (8 tests)
+✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
+
+Test Files  2 passed (2)
+Tests       11 passed (11)
+```
+
+---
+
+## Files Created
+
+```
+/
+├── vitest.config.ts           # Vitest configuration
+├── vitest.setup.ts            # Test setup with RTL matchers
+├── playwright.config.ts       # Playwright E2E configuration
+├── utils/
+│   └── formatUptime.ts        # Extracted utility function
+└── __tests__/
+    ├── test-utils.tsx         # Custom render and helpers
+    ├── components/
+    │   └── TerminalPrompt.test.tsx
+    ├── utils/
+    │   └── formatUptime.test.ts
+    └── e2e/
+        └── navigation.spec.ts  # E2E navigation tests (scaffolded)
+```
 
 ---
 
