@@ -27,7 +27,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Case-insensitive command parsing
     - Preserves argument case
 
-- **Test Files**
+- **Component Tests (Phase 3 Complete)**
+  - `__tests__/components/Terminal.test.tsx` - 30 comprehensive tests for Terminal component
+    - Initial render and welcome message tests
+    - All terminal commands (help, about, skills, projects, experience, contact, whoami, ls, clear, cat)
+    - Command history navigation (ArrowUp/ArrowDown)
+    - Keyboard shortcuts (Ctrl+L, Ctrl+C)
+    - Callback testing (onCommandEnter)
+    - Auto-scroll behavior
+    - Edge cases and error handling
+  - `__tests__/components/SystemStats.test.tsx` - 26 tests for SystemStats component
+    - Initial render and component structure
+    - Progress bars for CPU and Memory
+    - Uptime display and formatting
+    - Timer updates with fake timers
+    - Cleanup on unmount
+    - Edge cases (large uptime values)
+
+- **Test Files (Previous Phases)**
   - `__tests__/utils/formatUptime.test.ts` - 8 tests for formatUptime utility
   - `__tests__/utils/parseCommand.test.ts` - 20 tests for parseCommand utility
   - `__tests__/components/TerminalPrompt.test.tsx` - 3 tests for TerminalPrompt component
@@ -40,20 +57,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - `package.json` - Added testing dependencies and scripts
 - `components/Terminal.tsx` - Refactored to use `parseCommand` utility for better testability and maintainability
-- `TODO.md` - Updated to reflect Phase 2 completion (19% overall progress)
+- `TODO.md` - Updated to reflect Phase 3 completion (53% overall progress - 41/77 tasks complete)
 
 ### Test Results
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
 ✓ __tests__/utils/parseCommand.test.ts (20 tests)
 ✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
+✓ __tests__/components/Terminal.test.tsx (30 tests)
+✓ __tests__/components/SystemStats.test.tsx (26 tests)
 
-Test Files  3 passed (3)
-Tests       31 passed (31)
+Test Files  5 passed (5)
+Tests       87 passed (87)
+Duration    8.05s
 ```
 
 ### Planned (Next Phases)
-- Phase 3: Terminal and SystemStats component tests (26 tasks)
 - Phase 4: Header and QuickLinks component tests (11 tasks)
 - Phase 5: MacTerminal, ASCIIBanner, HeroSection tests (6 remaining tasks)
 - Phase 6: E2E tests with Playwright (14 tasks)
@@ -119,6 +138,7 @@ Tests       31 passed (31)
 | 2026-01-18 | 0.1.0 | 0 | 0% | Initial state - no tests |
 | 2026-01-18 | 0.1.1 | 11 | ~5% | Phase 1 complete - testing infrastructure |
 | 2026-01-18 | 0.1.2 | 31 | ~8% | Phase 2 complete - utility functions tested |
+| 2026-01-18 | 0.1.3 | 87 | ~25% | Phase 3 complete - Terminal & SystemStats components tested |
 
 ---
 
