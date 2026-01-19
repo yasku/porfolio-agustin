@@ -3,7 +3,7 @@
 > **Project:** Agustin Yaskuloski Portfolio
 > **Created:** 2026-01-18
 > **Last Updated:** 2026-01-18
-> **Status:** In Progress - Phase 2 Complete
+> **Status:** In Progress - Phase 5 Complete
 
 ---
 
@@ -72,91 +72,93 @@ npm run test:e2e:install  # Install Playwright browsers
 
 ---
 
-## Phase 3: Component Tests - High Priority
+## Phase 3: Component Tests - High Priority ✅ COMPLETED
 
 > **Goal:** Test the most complex interactive components
+> **Status:** 26/26 tasks completed
 > **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
-### 3.1 Terminal Component Tests
+### 3.1 Terminal Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 3.1.1 Test initial render | Verify welcome message and prompt display |
-| [ ] | 3.1.2 Test help command | Verify help output contains all commands |
-| [ ] | 3.1.3 Test about command | Verify about output content |
-| [ ] | 3.1.4 Test skills command | Verify skills output content |
-| [ ] | 3.1.5 Test projects command | Verify projects output content |
-| [ ] | 3.1.6 Test experience command | Verify experience output content |
-| [ ] | 3.1.7 Test contact command | Verify contact output content |
-| [ ] | 3.1.8 Test whoami command | Verify whoami output |
-| [ ] | 3.1.9 Test ls command | Verify ls output shows file listing |
-| [ ] | 3.1.10 Test clear command | Verify history is cleared |
-| [ ] | 3.1.11 Test cat resume.txt | Verify resume content displayed |
-| [ ] | 3.1.12 Test cat invalid file | Verify error message for unknown file |
-| [ ] | 3.1.13 Test cat without args | Verify usage message displayed |
-| [ ] | 3.1.14 Test unknown command | Verify "Command not found" message |
-| [ ] | 3.1.15 Test empty input | Verify no action on empty Enter |
-| [ ] | 3.1.16 Test ArrowUp navigation | Verify previous command recalled |
-| [ ] | 3.1.17 Test ArrowDown navigation | Verify next command in history |
-| [ ] | 3.1.18 Test Ctrl+L shortcut | Verify terminal cleared |
-| [ ] | 3.1.19 Test Ctrl+C shortcut | Verify input cleared |
-| [ ] | 3.1.20 Test onCommandEnter callback | Verify callback called with command |
-| [ ] | 3.1.21 Test auto-scroll behavior | Verify scroll to bottom on new output |
+| [x] | 3.1.1 Test initial render | Verify welcome message and prompt display |
+| [x] | 3.1.2 Test help command | Verify help output contains all commands |
+| [x] | 3.1.3 Test about command | Verify about output content |
+| [x] | 3.1.4 Test skills command | Verify skills output content |
+| [x] | 3.1.5 Test projects command | Verify projects output content |
+| [x] | 3.1.6 Test experience command | Verify experience output content |
+| [x] | 3.1.7 Test contact command | Verify contact output content |
+| [x] | 3.1.8 Test whoami command | Verify whoami output |
+| [x] | 3.1.9 Test ls command | Verify ls output shows file listing |
+| [x] | 3.1.10 Test clear command | Verify history is cleared |
+| [x] | 3.1.11 Test cat resume.txt | Verify resume content displayed |
+| [x] | 3.1.12 Test cat invalid file | Verify error message for unknown file |
+| [x] | 3.1.13 Test cat without args | Verify usage message displayed |
+| [x] | 3.1.14 Test unknown command | Verify "Command not found" message |
+| [x] | 3.1.15 Test empty input | Verify no action on empty Enter |
+| [x] | 3.1.16 Test ArrowUp navigation | Verify previous command recalled |
+| [x] | 3.1.17 Test ArrowDown navigation | Verify next command in history |
+| [x] | 3.1.18 Test Ctrl+L shortcut | Verify terminal cleared |
+| [x] | 3.1.19 Test Ctrl+C shortcut | Verify input cleared |
+| [x] | 3.1.20 Test onCommandEnter callback | Verify callback called with command |
+| [x] | 3.1.21 Test auto-scroll behavior | Verify scroll to bottom on new output |
 
-### 3.2 SystemStats Component Tests
+### 3.2 SystemStats Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 3.2.1 Test initial render | Verify component renders with stats |
-| [ ] | 3.2.2 Test progress bars | Verify CPU and memory bars render |
-| [ ] | 3.2.3 Test uptime display | Verify uptime format is correct |
-| [ ] | 3.2.4 Test timer updates | Verify values update on interval (mock timers) |
-| [ ] | 3.2.5 Test cleanup | Verify interval cleared on unmount |
+| [x] | 3.2.1 Test initial render | Verify component renders with stats |
+| [x] | 3.2.2 Test progress bars | Verify CPU and memory bars render |
+| [x] | 3.2.3 Test uptime display | Verify uptime format is correct |
+| [x] | 3.2.4 Test timer updates | Verify values update on interval (mock timers) |
+| [x] | 3.2.5 Test cleanup | Verify interval cleared on unmount |
 
 ---
 
-## Phase 4: Component Tests - Medium Priority
+## Phase 4: Component Tests - Medium Priority ✅ COMPLETED
 
 > **Goal:** Test interactive components with callbacks
+> **Status:** 11/11 tasks completed
 > **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
-### 4.1 Header Component Tests
+### 4.1 Header Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 4.1.1 Test render | Verify header renders with logo |
-| [ ] | 4.1.2 Test time display | Verify time updates every second |
-| [ ] | 4.1.3 Test GitHub link | Verify correct href and target |
-| [ ] | 4.1.4 Test LinkedIn link | Verify correct href and target |
-| [ ] | 4.1.5 Test responsive hiding | Verify system info hidden on mobile |
+| [x] | 4.1.1 Test render | Verify header renders with logo |
+| [x] | 4.1.2 Test time display | Verify time updates every second |
+| [x] | 4.1.3 Test GitHub link | Verify correct href and target |
+| [x] | 4.1.4 Test LinkedIn link | Verify correct href and target |
+| [x] | 4.1.5 Test responsive hiding | Verify system info hidden on mobile |
 
-### 4.2 QuickLinks Component Tests
+### 4.2 QuickLinks Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 4.2.1 Test render | Verify all 5 links render |
-| [ ] | 4.2.2 Test about click | Verify onCommandClick('about') called |
-| [ ] | 4.2.3 Test skills click | Verify onCommandClick('skills') called |
-| [ ] | 4.2.4 Test projects click | Verify onCommandClick('projects') called |
-| [ ] | 4.2.5 Test experience click | Verify onCommandClick('experience') called |
-| [ ] | 4.2.6 Test contact click | Verify onCommandClick('contact') called |
+| [x] | 4.2.1 Test render | Verify all 5 links render |
+| [x] | 4.2.2 Test about click | Verify onCommandClick('about') called |
+| [x] | 4.2.3 Test skills click | Verify onCommandClick('skills') called |
+| [x] | 4.2.4 Test projects click | Verify onCommandClick('projects') called |
+| [x] | 4.2.5 Test experience click | Verify onCommandClick('experience') called |
+| [x] | 4.2.6 Test contact click | Verify onCommandClick('contact') called |
 
 ---
 
-## Phase 5: Component Tests - Lower Priority ✅ PARTIALLY COMPLETED
+## Phase 5: Component Tests - Lower Priority ✅ COMPLETED
 
 > **Goal:** Test simple presentational components
-> **Status:** 3/9 tasks completed
+> **Status:** 9/9 tasks completed
 > **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
-### 5.1 MacTerminal Component Tests
+### 5.1 MacTerminal Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.1.1 Test default title | Verify "terminal" as default title |
-| [ ] | 5.1.2 Test custom title | Verify custom title renders |
-| [ ] | 5.1.3 Test children render | Verify children displayed in container |
-| [ ] | 5.1.4 Test traffic light buttons | Verify aria-labels present |
+| [x] | 5.1.1 Test default title | Verify "terminal" as default title |
+| [x] | 5.1.2 Test custom title | Verify custom title renders |
+| [x] | 5.1.3 Test children render | Verify children displayed in container |
+| [x] | 5.1.4 Test traffic light buttons | Verify aria-labels present |
 
 ### 5.2 TerminalPrompt Component Tests ✅ COMPLETED
 
@@ -166,17 +168,17 @@ npm run test:e2e:install  # Install Playwright browsers
 | [x] | 5.2.2 Test custom path | Verify custom path renders correctly |
 | [x] | 5.2.3 Test prompt format | Verify "agustin@portfolio:path$" format |
 
-### 5.3 ASCIIBanner Component Tests
+### 5.3 ASCIIBanner Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.3.1 Test render | Verify banner renders without errors |
+| [x] | 5.3.1 Test render | Verify banner renders without errors |
 
-### 5.4 HeroSection Component Tests
+### 5.4 HeroSection Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.4.1 Test render | Verify hero section renders |
+| [x] | 5.4.1 Test render | Verify hero section renders |
 
 ---
 
@@ -190,38 +192,36 @@ npm run test:e2e:install  # Install Playwright browsers
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.1.1 Test homepage load | Verify terminal visible on homepage |
-| [ ] | 6.1.2 Test type and execute | Type "help" → press Enter → see output |
-| [ ] | 6.1.3 Test command history | Type commands → ArrowUp recalls them |
-| [ ] | 6.1.4 Test all commands E2E | Execute each command, verify output |
+| [x] | 6.1.1 Test homepage load | Verify terminal visible on homepage |
+| [x] | 6.1.2 Test type and execute | Type "help" → press Enter → see output |
+| [x] | 6.1.3 Test command history | Type commands → ArrowUp recalls them |
+| [x] | 6.1.4 Test all commands E2E | Execute each command, verify output |
 
-### 6.2 Navigation Tests (Scaffolded)
+### 6.2 Navigation Tests
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [~] | 6.2.1 Test /about page | Navigate and verify content loads |
-| [~] | 6.2.2 Test /skills page | Navigate and verify content loads |
-| [~] | 6.2.3 Test /projects page | Navigate and verify content loads |
-| [~] | 6.2.4 Test /experience page | Navigate and verify content loads |
-| [~] | 6.2.5 Test /contact page | Navigate and verify content loads |
-| [~] | 6.2.6 Test 404 page | Navigate to invalid route, verify 404 |
-
-> [~] = Test scaffolded in `__tests__/e2e/navigation.spec.ts`, needs browser install to run
+| [x] | 6.2.1 Test /about page | Navigate and verify content loads |
+| [x] | 6.2.2 Test /skills page | Navigate and verify content loads |
+| [x] | 6.2.3 Test /projects page | Navigate and verify content loads |
+| [x] | 6.2.4 Test /experience page | Navigate and verify content loads |
+| [x] | 6.2.5 Test /contact page | Navigate and verify content loads |
+| [x] | 6.2.6 Test 404 page | Navigate to invalid route, verify 404 |
 
 ### 6.3 Responsive Tests
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.3.1 Test mobile viewport | Verify layout on 375px width |
-| [ ] | 6.3.2 Test tablet viewport | Verify layout on 768px width |
-| [ ] | 6.3.3 Test desktop viewport | Verify layout on 1280px width |
+| [x] | 6.3.1 Test mobile viewport | Verify layout on 375px width |
+| [x] | 6.3.2 Test tablet viewport | Verify layout on 768px width |
+| [x] | 6.3.3 Test desktop viewport | Verify layout on 1280px width |
 
 ### 6.4 Accessibility Tests
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.4.1 Test keyboard navigation | Tab through interactive elements |
-| [ ] | 6.4.2 Test focus management | Verify focus states visible |
+| [x] | 6.4.1 Test keyboard navigation | Tab through interactive elements |
+| [x] | 6.4.2 Test focus management | Verify focus states visible |
 
 ---
 
@@ -246,23 +246,42 @@ npm run test:e2e:install  # Install Playwright browsers
 |-------|-------------|-----------|----------|
 | Phase 1: Infrastructure | 8 | 8 | 100% ✅ |
 | Phase 2: Unit Tests | 4 | 4 | 100% ✅ |
-| Phase 3: High Priority | 26 | 0 | 0% |
-| Phase 4: Medium Priority | 11 | 0 | 0% |
-| Phase 5: Lower Priority | 9 | 3 | 33% |
-| Phase 6: E2E Tests | 14 | 0 | 0% (6 scaffolded) |
+| Phase 3: High Priority | 26 | 26 | 100% ✅ |
+| Phase 4: Medium Priority | 11 | 11 | 100% ✅ |
+| Phase 5: Lower Priority | 9 | 9 | 100% ✅ |
+| Phase 6: E2E Tests | 14 | 14 | 100% ✅ |
 | Phase 7: CI/CD | 5 | 0 | 0% |
-| **Total** | **77** | **15** | **19%** |
+| **Total** | **77** | **72** | **94%** |
 
 ---
 
 ## Test Results
 
+### Unit & Component Tests (Vitest)
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
 ✓ __tests__/utils/parseCommand.test.ts (20 tests)
 ✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
+✓ __tests__/components/Terminal.test.tsx (30 tests)
+✓ __tests__/components/SystemStats.test.tsx (26 tests)
+✓ __tests__/components/Header.test.tsx (19 tests)
+✓ __tests__/components/QuickLinks.test.tsx (18 tests)
+✓ __tests__/components/MacTerminal.test.tsx (20 tests)
+✓ __tests__/components/ASCIIBanner.test.tsx (24 tests)
+✓ __tests__/components/HeroSection.test.tsx (38 tests)
 
-Test Files  3 passed (3)
+Test Files  10 passed (10)
+Tests       206 passed (206)
+```
+
+### E2E Tests (Playwright - Chromium)
+```
+✓ __tests__/e2e/terminal.spec.ts (7 tests)
+✓ __tests__/e2e/navigation.spec.ts (9 tests)
+✓ __tests__/e2e/responsive.spec.ts (6 tests)
+✓ __tests__/e2e/accessibility.spec.ts (9 tests)
+
+Test Files  4 passed (4)
 Tests       31 passed (31)
 ```
 
@@ -281,12 +300,22 @@ Tests       31 passed (31)
 └── __tests__/
     ├── test-utils.tsx         # Custom render and helpers
     ├── components/
-    │   └── TerminalPrompt.test.tsx
+    │   ├── TerminalPrompt.test.tsx  # Prompt component tests (3 tests)
+    │   ├── Terminal.test.tsx        # Terminal component tests (30 tests)
+    │   ├── SystemStats.test.tsx     # SystemStats component tests (26 tests)
+    │   ├── Header.test.tsx          # Header component tests (19 tests)
+    │   ├── QuickLinks.test.tsx      # QuickLinks component tests (18 tests)
+    │   ├── MacTerminal.test.tsx     # MacTerminal component tests (20 tests)
+    │   ├── ASCIIBanner.test.tsx     # ASCIIBanner component tests (24 tests)
+    │   └── HeroSection.test.tsx     # HeroSection component tests (38 tests)
     ├── utils/
-    │   ├── formatUptime.test.ts
-    │   └── parseCommand.test.ts
+    │   ├── formatUptime.test.ts     # Uptime formatter tests (8 tests)
+    │   └── parseCommand.test.ts     # Command parser tests (20 tests)
     └── e2e/
-        └── navigation.spec.ts  # E2E navigation tests (scaffolded)
+        ├── terminal.spec.ts         # Terminal workflow E2E tests (7 tests)
+        ├── navigation.spec.ts       # Navigation E2E tests (9 tests)
+        ├── responsive.spec.ts       # Responsive viewport tests (6 tests)
+        └── accessibility.spec.ts    # Accessibility/keyboard tests (9 tests)
 ```
 
 ---

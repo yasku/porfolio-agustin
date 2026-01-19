@@ -27,11 +27,107 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Case-insensitive command parsing
     - Preserves argument case
 
-- **Test Files**
+- **Component Tests (Phase 3 Complete)**
+  - `__tests__/components/Terminal.test.tsx` - 30 comprehensive tests for Terminal component
+    - Initial render and welcome message tests
+    - All terminal commands (help, about, skills, projects, experience, contact, whoami, ls, clear, cat)
+    - Command history navigation (ArrowUp/ArrowDown)
+    - Keyboard shortcuts (Ctrl+L, Ctrl+C)
+    - Callback testing (onCommandEnter)
+    - Auto-scroll behavior
+    - Edge cases and error handling
+  - `__tests__/components/SystemStats.test.tsx` - 26 tests for SystemStats component
+    - Initial render and component structure
+    - Progress bars for CPU and Memory
+    - Uptime display and formatting
+    - Timer updates with fake timers
+    - Cleanup on unmount
+    - Edge cases (large uptime values)
+
+- **Component Tests (Phase 4 Complete)**
+  - `__tests__/components/Header.test.tsx` - 19 tests for Header component
+    - Render verification with logo and blinking cursor
+    - Time display updates every second with fake timers
+    - GitHub and LinkedIn link verification (href, target, rel attributes)
+    - Responsive hiding of system info on mobile devices
+    - Sticky header positioning and backdrop blur
+    - Timer cleanup on unmount
+  - `__tests__/components/QuickLinks.test.tsx` - 18 tests for QuickLinks component
+    - All 5 quick links render correctly (about, skills, projects, experience, contact)
+    - Icons, descriptions, and arrow indicators display
+    - Click handlers call onCommandClick with correct command
+    - Hover styles and group effects
+    - Multiple click handling
+    - Proper component structure and styling
+
+- **Component Tests (Phase 5 Complete)**
+  - `__tests__/components/MacTerminal.test.tsx` - 20 tests for MacTerminal component
+    - Default and custom title rendering
+    - Children render correctly within terminal container
+    - Traffic light buttons with proper aria-labels for accessibility
+    - macOS window header structure and styling
+    - Custom className application
+    - Rounded corners, shadows, and background colors
+  - `__tests__/components/ASCIIBanner.test.tsx` - 24 tests for ASCIIBanner component
+    - ASCII art banner display with proper styling
+    - Name and role text rendering
+    - Skill tags (Machine Learning, Deep Learning, NLP)
+    - Fade-in animation on mount
+    - Responsive font sizes for different breakpoints
+    - Code-style formatting for role display
+    - Semantic heading structure for accessibility
+  - `__tests__/components/HeroSection.test.tsx` - 38 tests for HeroSection component
+    - File path indicator and terminal prompt symbols
+    - Main name heading and role display
+    - Code block with syntax highlighting (const, expertise, etc.)
+    - Tech tags with comment-style markers
+    - Quick stats (years, projects, technologies)
+    - CTA buttons with correct hrefs and hover effects
+    - Responsive design across breakpoints
+    - Decorative cursor element
+    - Monospace font usage throughout
+    - Semantic HTML for accessibility
+
+- **E2E Tests (Phase 6 Complete)**
+  - `__tests__/e2e/terminal.spec.ts` - 7 tests for terminal workflow
+    - Homepage load with terminal visibility verification
+    - Command typing and execution ("help" command)
+    - Command history navigation with ArrowUp/ArrowDown
+    - All commands end-to-end testing (about, skills, projects, experience, contact, whoami, ls, cat, clear)
+    - Unknown command error handling
+    - Keyboard shortcuts (Ctrl+L for clear, Ctrl+C for cancel)
+  - `__tests__/e2e/navigation.spec.ts` - 9 tests for page navigation
+    - Homepage load with terminal
+    - Navigation to all pages (/about, /skills, /projects, /experience, /contact)
+    - 404 page handling for invalid routes
+    - Terminal theme consistency across pages
+    - Header links verification (GitHub, LinkedIn)
+  - `__tests__/e2e/responsive.spec.ts` - 6 tests for responsive design
+    - Mobile viewport testing (375px width)
+    - Tablet viewport testing (768px width)
+    - Desktop viewport testing (1280px width)
+    - Dynamic viewport changes
+    - Text readability across all viewports
+    - Navigation display on different screen sizes
+  - `__tests__/e2e/accessibility.spec.ts` - 9 tests for keyboard navigation and accessibility
+    - Keyboard navigation through interactive elements
+    - Link navigation using keyboard (Tab and Enter)
+    - Visible focus states on interactive elements
+    - Focus maintenance after command execution
+    - Semantic HTML structure (main, headings)
+    - Accessible form inputs
+    - Keyboard shortcuts support
+    - Mouse-free page navigation
+    - Keyboard accessible buttons
+  - **Configuration Updates**
+    - Fixed `playwright.config.ts` to use correct port (3100) matching dev server
+    - All E2E tests now pass with proper locator specificity (using `.first()` where needed)
+    - Updated page content checks to match actual page text
+
+- **Test Files (Previous Phases)**
   - `__tests__/utils/formatUptime.test.ts` - 8 tests for formatUptime utility
   - `__tests__/utils/parseCommand.test.ts` - 20 tests for parseCommand utility
   - `__tests__/components/TerminalPrompt.test.tsx` - 3 tests for TerminalPrompt component
-  - `__tests__/e2e/navigation.spec.ts` - E2E navigation tests (scaffolded)
 
 - **Documentation**
   - `TODO.md` - Comprehensive test coverage implementation plan with 77 tasks
@@ -40,23 +136,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - `package.json` - Added testing dependencies and scripts
 - `components/Terminal.tsx` - Refactored to use `parseCommand` utility for better testability and maintainability
-- `TODO.md` - Updated to reflect Phase 2 completion (19% overall progress)
+- `playwright.config.ts` - Updated baseURL and webServer.url from port 3000 to 3100 to match dev server
+- `TODO.md` - Updated to reflect Phase 6 completion (94% overall progress - 72/77 tasks complete)
 
 ### Test Results
+
+**Unit & Component Tests (Vitest)**
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
 ✓ __tests__/utils/parseCommand.test.ts (20 tests)
 ✓ __tests__/components/TerminalPrompt.test.tsx (3 tests)
+✓ __tests__/components/Terminal.test.tsx (30 tests)
+✓ __tests__/components/SystemStats.test.tsx (26 tests)
+✓ __tests__/components/Header.test.tsx (19 tests)
+✓ __tests__/components/QuickLinks.test.tsx (18 tests)
+✓ __tests__/components/MacTerminal.test.tsx (20 tests)
+✓ __tests__/components/ASCIIBanner.test.tsx (24 tests)
+✓ __tests__/components/HeroSection.test.tsx (38 tests)
 
-Test Files  3 passed (3)
+Test Files  10 passed (10)
+Tests       206 passed (206)
+Duration    10.40s
+```
+
+**E2E Tests (Playwright - Chromium)**
+```
+✓ __tests__/e2e/terminal.spec.ts (7 tests)
+✓ __tests__/e2e/navigation.spec.ts (9 tests)
+✓ __tests__/e2e/responsive.spec.ts (6 tests)
+✓ __tests__/e2e/accessibility.spec.ts (9 tests)
+
+Test Files  4 passed (4)
 Tests       31 passed (31)
+Duration    11.9s
 ```
 
 ### Planned (Next Phases)
-- Phase 3: Terminal and SystemStats component tests (26 tasks)
-- Phase 4: Header and QuickLinks component tests (11 tasks)
-- Phase 5: MacTerminal, ASCIIBanner, HeroSection tests (6 remaining tasks)
-- Phase 6: E2E tests with Playwright (14 tasks)
 - Phase 7: CI/CD integration with GitHub Actions (5 tasks)
 
 ---
@@ -119,6 +234,9 @@ Tests       31 passed (31)
 | 2026-01-18 | 0.1.0 | 0 | 0% | Initial state - no tests |
 | 2026-01-18 | 0.1.1 | 11 | ~5% | Phase 1 complete - testing infrastructure |
 | 2026-01-18 | 0.1.2 | 31 | ~8% | Phase 2 complete - utility functions tested |
+| 2026-01-18 | 0.1.3 | 87 | ~25% | Phase 3 complete - Terminal & SystemStats components tested |
+| 2026-01-19 | 0.1.4 | 124 | ~35% | Phase 4 complete - Header & QuickLinks components tested |
+| 2026-01-19 | 0.1.5 | 206 | ~45% | Phase 5 complete - All presentational components tested |
 
 ---
 
