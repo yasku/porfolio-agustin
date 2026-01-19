@@ -88,11 +88,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Monospace font usage throughout
     - Semantic HTML for accessibility
 
+- **E2E Tests (Phase 6 Complete)**
+  - `__tests__/e2e/terminal.spec.ts` - 7 tests for terminal workflow
+    - Homepage load with terminal visibility verification
+    - Command typing and execution ("help" command)
+    - Command history navigation with ArrowUp/ArrowDown
+    - All commands end-to-end testing (about, skills, projects, experience, contact, whoami, ls, cat, clear)
+    - Unknown command error handling
+    - Keyboard shortcuts (Ctrl+L for clear, Ctrl+C for cancel)
+  - `__tests__/e2e/navigation.spec.ts` - 9 tests for page navigation
+    - Homepage load with terminal
+    - Navigation to all pages (/about, /skills, /projects, /experience, /contact)
+    - 404 page handling for invalid routes
+    - Terminal theme consistency across pages
+    - Header links verification (GitHub, LinkedIn)
+  - `__tests__/e2e/responsive.spec.ts` - 6 tests for responsive design
+    - Mobile viewport testing (375px width)
+    - Tablet viewport testing (768px width)
+    - Desktop viewport testing (1280px width)
+    - Dynamic viewport changes
+    - Text readability across all viewports
+    - Navigation display on different screen sizes
+  - `__tests__/e2e/accessibility.spec.ts` - 9 tests for keyboard navigation and accessibility
+    - Keyboard navigation through interactive elements
+    - Link navigation using keyboard (Tab and Enter)
+    - Visible focus states on interactive elements
+    - Focus maintenance after command execution
+    - Semantic HTML structure (main, headings)
+    - Accessible form inputs
+    - Keyboard shortcuts support
+    - Mouse-free page navigation
+    - Keyboard accessible buttons
+  - **Configuration Updates**
+    - Fixed `playwright.config.ts` to use correct port (3100) matching dev server
+    - All E2E tests now pass with proper locator specificity (using `.first()` where needed)
+    - Updated page content checks to match actual page text
+
 - **Test Files (Previous Phases)**
   - `__tests__/utils/formatUptime.test.ts` - 8 tests for formatUptime utility
   - `__tests__/utils/parseCommand.test.ts` - 20 tests for parseCommand utility
   - `__tests__/components/TerminalPrompt.test.tsx` - 3 tests for TerminalPrompt component
-  - `__tests__/e2e/navigation.spec.ts` - E2E navigation tests (scaffolded)
 
 - **Documentation**
   - `TODO.md` - Comprehensive test coverage implementation plan with 77 tasks
@@ -101,9 +136,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - `package.json` - Added testing dependencies and scripts
 - `components/Terminal.tsx` - Refactored to use `parseCommand` utility for better testability and maintainability
-- `TODO.md` - Updated to reflect Phase 5 completion (75% overall progress - 58/77 tasks complete)
+- `playwright.config.ts` - Updated baseURL and webServer.url from port 3000 to 3100 to match dev server
+- `TODO.md` - Updated to reflect Phase 6 completion (94% overall progress - 72/77 tasks complete)
 
 ### Test Results
+
+**Unit & Component Tests (Vitest)**
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
 ✓ __tests__/utils/parseCommand.test.ts (20 tests)
@@ -121,8 +159,19 @@ Tests       206 passed (206)
 Duration    10.40s
 ```
 
+**E2E Tests (Playwright - Chromium)**
+```
+✓ __tests__/e2e/terminal.spec.ts (7 tests)
+✓ __tests__/e2e/navigation.spec.ts (9 tests)
+✓ __tests__/e2e/responsive.spec.ts (6 tests)
+✓ __tests__/e2e/accessibility.spec.ts (9 tests)
+
+Test Files  4 passed (4)
+Tests       31 passed (31)
+Duration    11.9s
+```
+
 ### Planned (Next Phases)
-- Phase 6: E2E tests with Playwright (14 tasks)
 - Phase 7: CI/CD integration with GitHub Actions (5 tasks)
 
 ---

@@ -192,38 +192,36 @@ npm run test:e2e:install  # Install Playwright browsers
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.1.1 Test homepage load | Verify terminal visible on homepage |
-| [ ] | 6.1.2 Test type and execute | Type "help" → press Enter → see output |
-| [ ] | 6.1.3 Test command history | Type commands → ArrowUp recalls them |
-| [ ] | 6.1.4 Test all commands E2E | Execute each command, verify output |
+| [x] | 6.1.1 Test homepage load | Verify terminal visible on homepage |
+| [x] | 6.1.2 Test type and execute | Type "help" → press Enter → see output |
+| [x] | 6.1.3 Test command history | Type commands → ArrowUp recalls them |
+| [x] | 6.1.4 Test all commands E2E | Execute each command, verify output |
 
-### 6.2 Navigation Tests (Scaffolded)
+### 6.2 Navigation Tests
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [~] | 6.2.1 Test /about page | Navigate and verify content loads |
-| [~] | 6.2.2 Test /skills page | Navigate and verify content loads |
-| [~] | 6.2.3 Test /projects page | Navigate and verify content loads |
-| [~] | 6.2.4 Test /experience page | Navigate and verify content loads |
-| [~] | 6.2.5 Test /contact page | Navigate and verify content loads |
-| [~] | 6.2.6 Test 404 page | Navigate to invalid route, verify 404 |
-
-> [~] = Test scaffolded in `__tests__/e2e/navigation.spec.ts`, needs browser install to run
+| [x] | 6.2.1 Test /about page | Navigate and verify content loads |
+| [x] | 6.2.2 Test /skills page | Navigate and verify content loads |
+| [x] | 6.2.3 Test /projects page | Navigate and verify content loads |
+| [x] | 6.2.4 Test /experience page | Navigate and verify content loads |
+| [x] | 6.2.5 Test /contact page | Navigate and verify content loads |
+| [x] | 6.2.6 Test 404 page | Navigate to invalid route, verify 404 |
 
 ### 6.3 Responsive Tests
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.3.1 Test mobile viewport | Verify layout on 375px width |
-| [ ] | 6.3.2 Test tablet viewport | Verify layout on 768px width |
-| [ ] | 6.3.3 Test desktop viewport | Verify layout on 1280px width |
+| [x] | 6.3.1 Test mobile viewport | Verify layout on 375px width |
+| [x] | 6.3.2 Test tablet viewport | Verify layout on 768px width |
+| [x] | 6.3.3 Test desktop viewport | Verify layout on 1280px width |
 
 ### 6.4 Accessibility Tests
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 6.4.1 Test keyboard navigation | Tab through interactive elements |
-| [ ] | 6.4.2 Test focus management | Verify focus states visible |
+| [x] | 6.4.1 Test keyboard navigation | Tab through interactive elements |
+| [x] | 6.4.2 Test focus management | Verify focus states visible |
 
 ---
 
@@ -251,14 +249,15 @@ npm run test:e2e:install  # Install Playwright browsers
 | Phase 3: High Priority | 26 | 26 | 100% ✅ |
 | Phase 4: Medium Priority | 11 | 11 | 100% ✅ |
 | Phase 5: Lower Priority | 9 | 9 | 100% ✅ |
-| Phase 6: E2E Tests | 14 | 0 | 0% (6 scaffolded) |
+| Phase 6: E2E Tests | 14 | 14 | 100% ✅ |
 | Phase 7: CI/CD | 5 | 0 | 0% |
-| **Total** | **77** | **58** | **75%** |
+| **Total** | **77** | **72** | **94%** |
 
 ---
 
 ## Test Results
 
+### Unit & Component Tests (Vitest)
 ```
 ✓ __tests__/utils/formatUptime.test.ts (8 tests)
 ✓ __tests__/utils/parseCommand.test.ts (20 tests)
@@ -273,6 +272,17 @@ npm run test:e2e:install  # Install Playwright browsers
 
 Test Files  10 passed (10)
 Tests       206 passed (206)
+```
+
+### E2E Tests (Playwright - Chromium)
+```
+✓ __tests__/e2e/terminal.spec.ts (7 tests)
+✓ __tests__/e2e/navigation.spec.ts (9 tests)
+✓ __tests__/e2e/responsive.spec.ts (6 tests)
+✓ __tests__/e2e/accessibility.spec.ts (9 tests)
+
+Test Files  4 passed (4)
+Tests       31 passed (31)
 ```
 
 ---
@@ -302,7 +312,10 @@ Tests       206 passed (206)
     │   ├── formatUptime.test.ts     # Uptime formatter tests (8 tests)
     │   └── parseCommand.test.ts     # Command parser tests (20 tests)
     └── e2e/
-        └── navigation.spec.ts       # E2E navigation tests (scaffolded)
+        ├── terminal.spec.ts         # Terminal workflow E2E tests (7 tests)
+        ├── navigation.spec.ts       # Navigation E2E tests (9 tests)
+        ├── responsive.spec.ts       # Responsive viewport tests (6 tests)
+        └── accessibility.spec.ts    # Accessibility/keyboard tests (9 tests)
 ```
 
 ---
