@@ -3,7 +3,7 @@
 > **Project:** Agustin Yaskuloski Portfolio
 > **Created:** 2026-01-18
 > **Last Updated:** 2026-01-18
-> **Status:** In Progress - Phase 4 Complete
+> **Status:** In Progress - Phase 5 Complete
 
 ---
 
@@ -145,20 +145,20 @@ npm run test:e2e:install  # Install Playwright browsers
 
 ---
 
-## Phase 5: Component Tests - Lower Priority ✅ PARTIALLY COMPLETED
+## Phase 5: Component Tests - Lower Priority ✅ COMPLETED
 
 > **Goal:** Test simple presentational components
-> **Status:** 3/9 tasks completed
+> **Status:** 9/9 tasks completed
 > **ESSENTIAL:** Update CHANGELOG.md after completing this phase
 
-### 5.1 MacTerminal Component Tests
+### 5.1 MacTerminal Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.1.1 Test default title | Verify "terminal" as default title |
-| [ ] | 5.1.2 Test custom title | Verify custom title renders |
-| [ ] | 5.1.3 Test children render | Verify children displayed in container |
-| [ ] | 5.1.4 Test traffic light buttons | Verify aria-labels present |
+| [x] | 5.1.1 Test default title | Verify "terminal" as default title |
+| [x] | 5.1.2 Test custom title | Verify custom title renders |
+| [x] | 5.1.3 Test children render | Verify children displayed in container |
+| [x] | 5.1.4 Test traffic light buttons | Verify aria-labels present |
 
 ### 5.2 TerminalPrompt Component Tests ✅ COMPLETED
 
@@ -168,17 +168,17 @@ npm run test:e2e:install  # Install Playwright browsers
 | [x] | 5.2.2 Test custom path | Verify custom path renders correctly |
 | [x] | 5.2.3 Test prompt format | Verify "agustin@portfolio:path$" format |
 
-### 5.3 ASCIIBanner Component Tests
+### 5.3 ASCIIBanner Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.3.1 Test render | Verify banner renders without errors |
+| [x] | 5.3.1 Test render | Verify banner renders without errors |
 
-### 5.4 HeroSection Component Tests
+### 5.4 HeroSection Component Tests ✅ COMPLETED
 
 | Status | Task | Description |
 |--------|------|-------------|
-| [ ] | 5.4.1 Test render | Verify hero section renders |
+| [x] | 5.4.1 Test render | Verify hero section renders |
 
 ---
 
@@ -250,10 +250,10 @@ npm run test:e2e:install  # Install Playwright browsers
 | Phase 2: Unit Tests | 4 | 4 | 100% ✅ |
 | Phase 3: High Priority | 26 | 26 | 100% ✅ |
 | Phase 4: Medium Priority | 11 | 11 | 100% ✅ |
-| Phase 5: Lower Priority | 9 | 3 | 33% |
+| Phase 5: Lower Priority | 9 | 9 | 100% ✅ |
 | Phase 6: E2E Tests | 14 | 0 | 0% (6 scaffolded) |
 | Phase 7: CI/CD | 5 | 0 | 0% |
-| **Total** | **77** | **52** | **68%** |
+| **Total** | **77** | **58** | **75%** |
 
 ---
 
@@ -267,9 +267,12 @@ npm run test:e2e:install  # Install Playwright browsers
 ✓ __tests__/components/SystemStats.test.tsx (26 tests)
 ✓ __tests__/components/Header.test.tsx (19 tests)
 ✓ __tests__/components/QuickLinks.test.tsx (18 tests)
+✓ __tests__/components/MacTerminal.test.tsx (20 tests)
+✓ __tests__/components/ASCIIBanner.test.tsx (24 tests)
+✓ __tests__/components/HeroSection.test.tsx (38 tests)
 
-Test Files  7 passed (7)
-Tests       124 passed (124)
+Test Files  10 passed (10)
+Tests       206 passed (206)
 ```
 
 ---
@@ -291,7 +294,10 @@ Tests       124 passed (124)
     │   ├── Terminal.test.tsx        # Terminal component tests (30 tests)
     │   ├── SystemStats.test.tsx     # SystemStats component tests (26 tests)
     │   ├── Header.test.tsx          # Header component tests (19 tests)
-    │   └── QuickLinks.test.tsx      # QuickLinks component tests (18 tests)
+    │   ├── QuickLinks.test.tsx      # QuickLinks component tests (18 tests)
+    │   ├── MacTerminal.test.tsx     # MacTerminal component tests (20 tests)
+    │   ├── ASCIIBanner.test.tsx     # ASCIIBanner component tests (24 tests)
+    │   └── HeroSection.test.tsx     # HeroSection component tests (38 tests)
     ├── utils/
     │   ├── formatUptime.test.ts     # Uptime formatter tests (8 tests)
     │   └── parseCommand.test.ts     # Command parser tests (20 tests)
